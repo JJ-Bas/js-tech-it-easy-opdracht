@@ -162,16 +162,16 @@ const inventory = [
     },
 ];
 
-//opdracht 1a//
+//opdracht-1//
+
 console.log("-----1A-----")
 
 const tvNames = inventory.map((inventoryType) => {
-    return ({"type":inventoryType.type,"name":inventoryType.name})
+    return ({"type": inventoryType.type, "name": inventoryType.name})
 })
 
 console.log(tvNames)
 
-//opdracht 1b//
 console.log("-----1B-----")
 
 const tvSoldOut = inventory.filter((inventoryEmpty) => {
@@ -180,12 +180,36 @@ const tvSoldOut = inventory.filter((inventoryEmpty) => {
 
 console.log(tvSoldOut)
 
-//opdracht 1c//
 console.log("-----1C-----")
 
-const tvAmbiLightList = inventory.options.filter((inventoryAL) => {
-    return inventoryAL.options.ambiLight === "true,"
+const tvAmbiLightList = inventory.filter((inventoryAL) => {
+        return inventoryAL.options.ambiLight === true
 })
 
 console.log(tvAmbiLightList)
-//opdracht 1d//
+
+console.log("-----1D-----")
+
+function sortPriceLoHi (array) { return array.sort((a, b) => a.price - b.price)}
+
+sortPriceLoHi(inventory)
+
+console.log(inventory)
+
+//opdracht 2//
+console.log("-----2A-----")
+
+let tvSold = 0
+
+for ( let i = 0; i < inventory.length ; i++){
+    tvSold = tvSold + inventory[i].sold
+}
+
+console.log(tvSold)
+
+console.log("-----2B-----")
+
+
+console.log("-----2C-----")
+console.log("-----2D-----")
+console.log("-----2E-----")
