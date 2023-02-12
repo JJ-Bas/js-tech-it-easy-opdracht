@@ -183,14 +183,16 @@ console.log(tvSoldOut)
 console.log("-----1C-----")
 
 const tvAmbiLightList = inventory.filter((inventoryAL) => {
-        return inventoryAL.options.ambiLight === true
+    return inventoryAL.options.ambiLight === true
 })
 
 console.log(tvAmbiLightList)
 
 console.log("-----1D-----")
 
-function sortPriceLoHi (array) { return array.sort((a, b) => a.price - b.price)}
+function sortPriceLoHi(array) {
+    return array.sort((a, b) => a.price - b.price)
+}
 
 sortPriceLoHi(inventory)
 
@@ -201,15 +203,33 @@ console.log("-----2A-----")
 
 let tvSold = 0
 
-for ( let i = 0; i < inventory.length ; i++){
+for (let i = 0; i < inventory.length; i++) {
     tvSold = tvSold + inventory[i].sold
 }
 
 console.log(tvSold)
 
 console.log("-----2B-----")
+const numberOfSales = document.getElementById("number-of-sales")
 
+console.log(numberOfSales)
+
+numberOfSales.textContent = tvSold
 
 console.log("-----2C-----")
+
+let tvBought = 0
+for (let i = 0; i < inventory.length; i++) {
+    tvBought = tvBought + inventory[i].originalStock
+}
+console.log(tvBought)
+
 console.log("-----2D-----")
+
+const totalNumberBought = document.getElementById("numbers-bought")
+totalNumberBought.textContent = tvBought
+
 console.log("-----2E-----")
+
+const numbersInStock = document.getElementById("numbers-in-stock")
+numbersInStock.textContent = tvBought - tvSold
