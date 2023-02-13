@@ -233,3 +233,75 @@ console.log("-----2E-----")
 
 const numbersInStock = document.getElementById("numbers-in-stock")
 numbersInStock.textContent = tvBought - tvSold
+
+//opdracht 3//
+console.log("-----3A-----")
+
+const brandNames = inventory.map((brandName) => {
+    return brandName.brand
+})
+
+console.log(brandNames)
+
+console.log("-----3B-----")
+
+function createlist(array) {
+    const brandList = array.map((listName) => {
+        return listName.brand
+    })
+    return brandList
+}
+
+const brandList = createlist(inventory)
+
+console.log(brandList)
+
+//opdracht 4//
+console.log("-----4A-----")
+
+function generateTvName(array, i) {
+    return `${array[i].brand} ${array[i].type} - ${array[i].name}`
+}
+
+const tvName = generateTvName(inventory, 0)
+
+console.log(tvName)
+
+console.log("-----4B-----")
+
+function generatePriceString(price) {
+    return `€${price},-`
+}
+
+const tvPrice = generatePriceString(123)
+
+console.log(tvPrice)
+
+console.log("-----4C-----")
+
+console.log(inventory[3].availableSizes)
+
+function screenSize(array) {
+let sizeList = `${array[3].availableSizes[0]} inch (${array[3].availableSizes[0] * 2.54 | 0} cm)`
+
+    for (let i = 1; i < array[3].availableSizes.length; i++) {
+        sizeList = sizeList + `| ${array[3].availableSizes[i]} inch (${array[3].availableSizes[i] * 2.54 | 0} cm) `
+    }
+    return sizeList
+}
+
+const tvSizes = screenSize(inventory)
+
+console.log(tvSizes)
+
+console.log("-----4D-----")
+
+function tvOverview (array) {
+    array.map()
+}
+
+//name//
+
+//price//
+
+//sizes//
