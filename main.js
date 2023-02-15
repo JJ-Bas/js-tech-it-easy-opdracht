@@ -265,9 +265,9 @@ function tvOverview(array) {
         for (let i = 1; i < array.availableSizes.length; i++) {
             sizeList = sizeList + `| ${array.availableSizes[i]} inch (${array.availableSizes[i] * 2.54 | 0} cm) `
         }
-        return (`${array.brand} ${array.type} - ${array.name}
+        return `${array.brand} ${array.type} - ${array.name}
 €${array.price},-
-${sizeList}`)
+${sizeList}`
     })
     return tvDisplay
 }
@@ -275,3 +275,11 @@ ${sizeList}`)
 const listForDisplay = tvOverview(inventory)
 
 console.log(listForDisplay)
+
+let tvInfoList = document.getElementById("tv-info-list")
+
+listForDisplay.forEach((item) => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    tvInfoList.appendChild(li);
+})

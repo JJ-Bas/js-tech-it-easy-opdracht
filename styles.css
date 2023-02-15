@@ -9,3 +9,17 @@
 #numbers-in-stock {
     color: crimson;
 }
+
+#tv-info-list {
+    list-style: none;
+}
+
+#tv-info-list li {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 60vw;
+    background-color: lightgray;
+}
